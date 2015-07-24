@@ -11,10 +11,12 @@ def pascal(c: Int, r: Int): Int =
 // check balanced parentheses
 def balance(chars: List[Char]): Boolean = {
   def balanceRec(chars: List[Char], open_count: Int): Int =  
-    if (chars.isEmpty || open_count < 0) open_count
-    else if (chars.head == '(') balanceRec(chars.tail, open_count + 1)
-    else if (chars.head == ')') balanceRec(chars.tail, open_count - 1) 
-    else balanceRec(chars.tail, open_count)
+    (chars, count) match {
+      case (_, c) if c < 0 => c
+      case (Nil, c) => c
+      case ('('::chs, c) => balanceRec(chs, c+1)
+      case (')'::chs, c) => balanceRec(chs, c-1)
+    }
 
   balanceRec(chars, 0) == 0
 }
