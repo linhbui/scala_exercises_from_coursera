@@ -31,5 +31,51 @@ def countChange(money: Int, coins: List[Int]): Int = {
   countChangeRec(money, coins)
 }
 
-def map(lst: List[Int], f: Int=>Int): List[Int] =
+def map[A, B](lst: List[A], f: A => B): List[B] = lst match {
+  case Nil => Nil
+  case a::as => f(a)::map(as, f)
+}
+
+def filter[A](lst: List[A], f: A => Boolean): List[A] = lst match {
+  case Nil => Nil
+  case a::as => if f(a) a::filter(as, f) else filter(as, f)
+}
+
+def zip[A, B](lst1: List[A], lst2: List[B]): List[(A, B)] = 
+  (lst1, lst2) match {
+    case (Nil, _) => Nil
+    case (_, Nil) => Nil
+    case (a::as, b::bs) => (a, b)::zip(as, bs)
+  }
+
+def partition[A](lst: List[A], f: A => Boolean): (List[A], List[A]) = lst match {
+  case Nil => (Nil, Nil)
+  case a::as => partition(as) match {
+    case (lst1, lst2) => if f(a) (a::lst1, lst2) else (lst1, a::lst2)
+  }
+}
+
+def find[A](lst: List[A], f: A => Boolean): Option[A] = lst match {
+  case Nil => None
+  case a::as => if f(a) Some(a) else find(as)
+}
+
+def drop[A](lst: List[A], n: Int): List[A] = {
+  if (n <= 0) lst
+  else (lst, n) match {
+    case (Nil, _) => Nil 
+    case (a:as, n) => drop(as, n-1)
+  }
+}
+
+def dropWhile[A](lst: List[A], f: A => Boolean): List[A] = lst match {
+  case Nil => Nil
+  case a::as => if f(a) dropWhile(as) else a::as
+}
+
+def foldLeft[A, B](lst: List[A], f: A => B => B, seed: B): B = lst match {
+    case Nil => seed
+    case a::as => foldLeft(as, f, f(a, seed))
+}
+
 
