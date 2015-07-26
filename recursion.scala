@@ -78,4 +78,8 @@ def foldLeft[A, B](lst: List[A], f: A => B => B, seed: B): B = lst match {
     case a::as => foldLeft(as, f, f(a, seed))
 }
 
+def foldRight[A, B](lst: List[A], f: A => B => B, seed: B): B = lst match {
+  case Nil => seed
+  case a::as => f(a, foldRight(as, f, seed))
+}
 
