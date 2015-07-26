@@ -78,8 +78,26 @@ def foldLeft[A, B](lst: List[A], f: A => B => B, seed: B): B = lst match {
     case a::as => foldLeft(as, f, f(a, seed))
 }
 
+def count[A](lst: List[A]): Int =
+  foldLeft(lst, (_, b => b + 1) , 0)
+
+def sum(lst: List[Int]): Int =
+  foldLeft(lst, (_ + _) ,0)
+
 def foldRight[A, B](lst: List[A], f: A => B => B, seed: B): B = lst match {
   case Nil => seed
   case a::as => f(a, foldRight(as, f, seed))
 }
 
+def flatten[A](lst: List[List[A]]): List[A] = lst match {
+  case Nil => Nil
+  case a::as => a ++ flatten(as)
+}
+
+def flatten[A](lst: List[List[A]]): List[A] =
+  foldLeft(lst, (_ ++ _), Nil)
+
+def flatMap[A, B](lst: List[A], f: A => List[B]): List[B] = lst match {
+  case Nil => Nil
+  case a::as => f(A) ++ flatten(map(as))
+}
