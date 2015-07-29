@@ -64,7 +64,7 @@ def drop[A](lst: List[A], n: Int): List[A] = {
   if (n <= 0) lst
   else (lst, n) match {
     case (Nil, _) => Nil 
-    case (a:as, n) => drop(as, n-1)
+    case (a::as, n) => drop(as, n-1)
   }
 }
 
@@ -100,4 +100,20 @@ def flatten[A](lst: List[List[A]]): List[A] =
 def flatMap[A, B](lst: List[A], f: A => List[B]): List[B] = lst match {
   case Nil => Nil
   case a::as => f(A) ++ flatten(map(as))
+}
+
+def reduceString(str: String): String = {
+  def reduceStringRec(str: List[Char]): List[Char] = str match {
+    case Nil => Nil
+    case c::cs => c::reduceStringRec(cs.filter(_ != c))
+  }
+  
+  reduceStringRec(str.toList).mkString
+}
+
+def quickSort(lst: List[A]): List[A] = lst match {
+  case Nil => Nil
+  case a::as => as.partition(_ <= a) match {
+    (lst1, lst2) => quickSort(lst1) ++ List(a) ++ quickSort(lst2)
+  }
 }
