@@ -27,4 +27,18 @@ object FunSets {
     
     iter(-1000)
   }
+
+  def exists(s: Set, p: Int => Boolean): Boolean = {
+    def iter(a: Int): Boolean = {
+      if (a > 1000) false
+      else if (contains(s, a)) p(a) || iter(a+1)
+      else iter(a + 1)
+    }
+    
+    iter(-1000)
+  }
+
+  def map(s: Set, f: Int => Int): Set = {
+    
+  }
 }
