@@ -39,6 +39,12 @@ object FunSets {
   }
 
   def map(s: Set, f: Int => Int): Set = {
+    def iter(a: Int): Set = {
+      if (a > 1000) (_ => false)
+      else if (contains(s, a)) union(Set(f(a)), iter(a + 1))
+      else iter(a + 1)
+    }
     
+    iter(-1000)
   }
 }
