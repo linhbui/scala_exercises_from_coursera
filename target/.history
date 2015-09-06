@@ -1,0 +1,7 @@
+paste
+:paste
+scala
+:p
+exit
+:paste
+exit

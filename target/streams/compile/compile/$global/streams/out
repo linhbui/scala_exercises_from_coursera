@@ -1,0 +1,91 @@
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mInitial source changes: [0m
+[0m[[0mdebug[0m] [0m	removed:Set()[0m
+[0m[[0mdebug[0m] [0m	added: Set(/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/higherOrderFunctions.scala, /Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/objects.scala, /Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala)[0m
+[0m[[0mdebug[0m] [0m	modified: Set()[0m
+[0m[[0mdebug[0m] [0mRemoved products: Set()[0m
+[0m[[0mdebug[0m] [0mExternal API changes: API Changes: Set()[0m
+[0m[[0mdebug[0m] [0mModified binary dependencies: Set()[0m
+[0m[[0mdebug[0m] [0mInitial directly invalidated sources: Set(/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/higherOrderFunctions.scala, /Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/objects.scala, /Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala)[0m
+[0m[[0mdebug[0m] [0m[0m
+[0m[[0mdebug[0m] [0mSources indirectly invalidated by:[0m
+[0m[[0mdebug[0m] [0m	product: Set()[0m
+[0m[[0mdebug[0m] [0m	binary dep: Set()[0m
+[0m[[0mdebug[0m] [0m	external source: Set()[0m
+[0m[[0mdebug[0m] [0mAll initially invalidated sources: Set(/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/higherOrderFunctions.scala, /Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/objects.scala, /Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala)[0m
+[0m[[0mdebug[0m] [0mRecompiling all 3 sources: invalidated sources (3) exceeded 50.0% of all sources[0m
+[0m[[0minfo[0m] [0mCompiling 3 Scala sources to /Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/target/scala-2.10/classes...[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.10.4[0m
+[0m[[0mdebug[0m] [0mGetting compiler-interface from component compiler for Scala 2.10.4[0m
+[0m[[0mdebug[0m] [0mRunning cached compiler 3d6673fb, interfacing (CompilerInterface) with Scala compiler version 2.10.4[0m
+[0m[[0mdebug[0m] [0mCalling Scala compiler with arguments  (CompilerInterface):[0m
+[0m[[0mdebug[0m] [0m	-bootclasspath[0m
+[0m[[0mdebug[0m] [0m	/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/sunrsasign.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk1.8.0_51.jdk/Contents/Home/jre/classes:/Users/linhbui/.sbt/boot/scala-2.10.4/lib/scala-library.jar[0m
+[0m[[0mdebug[0m] [0m	-classpath[0m
+[0m[[0mdebug[0m] [0m	/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/target/scala-2.10/classes[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/higherOrderFunctions.scala:1: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef mapReduce(f: Int => Int, combine: (Int, Int) => Int, zero: Int)(a: Int, b: Int): Int = (a, b) match {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/objects.scala:92: illegal start of simple expression[0m
+[0m[[31merror[0m] [0m    def findMax(a: Tweet, b: Tweet): Tweet =[0m
+[0m[[31merror[0m] [0m    ^[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala:2: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef pascal(c: Int, r: Int): Int =[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala:12: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef balance(chars: List[Char]): Boolean = {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala:25: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef countChange(money: Int, coins: List[Int]): Int = {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala:34: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef map[A, B](lst: List[A], f: A => B): List[B] = lst match {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala:39: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef filter[A](lst: List[A], f: A => Boolean): List[A] = lst match {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala:44: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef zip[A, B](lst1: List[A], lst2: List[B]): List[(A, B)] = [0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala:51: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef partition[A](lst: List[A], f: A => Boolean): (List[A], List[A]) = lst match {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala:58: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef find[A](lst: List[A], f: A => Boolean): Option[A] = lst match {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala:63: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef drop[A](lst: List[A], n: Int): List[A] = {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala:71: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef dropWhile[A](lst: List[A], f: A => Boolean): List[A] = lst match {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala:76: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef foldLeft[A, B](lst: List[A], f: A => B => B, seed: B): B = lst match {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala:81: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef count[A](lst: List[A]): Int =[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala:84: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef sum(lst: List[Int]): Int =[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala:87: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef foldRight[A, B](lst: List[A], f: A => B => B, seed: B): B = lst match {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala:92: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef flatten[A](lst: List[List[A]]): List[A] = lst match {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala:97: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef flatten[A](lst: List[List[A]]): List[A] =[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala:100: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef flatMap[A, B](lst: List[A], f: A => List[B]): List[B] = lst match {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala:105: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef reduceString(str: String): String = {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m/Users/linhbui/Desktop/programs/scala/scala_exercises_from_coursera/recursion.scala:114: expected class or object definition[0m
+[0m[[31merror[0m] [0mdef quickSort(lst: List[A]): List[A] = lst match {[0m
+[0m[[31merror[0m] [0m^[0m
+[0m[[31merror[0m] [0m21 errors found[0m
+[0m[[0mdebug[0m] [0mCompilation failed (CompilerInterface)[0m
+[0m[[31merror[0m] [0m(compile:[31mcompile[0m) Compilation failed[0m
