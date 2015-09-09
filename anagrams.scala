@@ -102,7 +102,6 @@ object Anagrams {
    *  Note: the resulting value is an occurrence - meaning it is sorted
    *  and has no zero-entries.
    */
-  type Occurrences = List[(Char, Int)]
 
   def subtract(x: Occurrences, y: Occurrences): Occurrences = {
     val mapY = y.toMap
@@ -157,6 +156,30 @@ object Anagrams {
    *
    *  Note: There is only one anagram of an empty sentence.
    */
-  def sentenceAnagrams(sentence: Sentence): List[Sentence] = ???
 
+  // DRAFT
+  //def f(occurs) = {
+      //val subsets = combinations(occurs)
+      //subsets.map( el => {
+          //val words = dictionaryByOcccurences.getOrElse(x, Nil)
+          //words.map( w => w::f(subtract(occurs, el)))
+      //})
+  //}
+  
+  def sentenceAnagrams(sentence: Sentence): List[Sentence] = {
+    val sentenceOccurrences = sentenceOccurrences(sentence)
+
+    def sentenceAnagramsRec(sentenceOccurrences: Occurrences): List[Sentence] = sentenceOccurrences match {
+      case Nil => Nil
+      case _ => {
+        for {
+          x <- combinations(sentenceOccurrences)
+          y <- dictionaryByOccurrences.getOrElse(x, Nil)
+          z <- sentenceAnagramsRec(subtract(sentenceOccurrences, x))
+        } yield List(y) ++ z
+      }
+    }
+
+    sentenceAnagramsRec(sentenceOccurrences)
+  }
 }
