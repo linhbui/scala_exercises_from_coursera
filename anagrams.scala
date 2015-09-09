@@ -173,7 +173,7 @@ object Anagrams {
       case Nil => Nil
       case _ => {
         for {
-          x <- combinations(sentenceOccurrences)
+          x <- combinations(sentenceOccurrences) filter {_.nonEmpty} // to prevent infinite loop
           y <- dictionaryByOccurrences.getOrElse(x, Nil)
           z <- sentenceAnagramsRec(subtract(sentenceOccurrences, x))
         } yield List(y) ++ z
