@@ -66,12 +66,16 @@ trait Solver extends GameDef {
    * construct the correctly sorted stream.
    */
   def from(initial: Stream[(Block, List[Move])],
-           explored: Set[Block]): Stream[(Block, List[Move])] = {
+         explored: Set[Block]): Stream[(Block, List[Move])] = {
     initial match {
-      case Stream.empty => Stream.empty
-      case (block, moves)#::as => {
-        val validNeighbors = newNeighborsOnly(neighborsWithHistory(block, moves), explored)
-        (block, moves) #:: from(as, explored) #::: from(validNeighbors, explored + block)
+      case Stream.Empty => Stream.Empty
+      case stream => {
+        val nextPos = for {
+          (block, moves) <- stream
+          neighbor <- newNeighborsOnly(neighborsWithHistory(block, moves), explored)
+        } yield neighbor
+        
+        initial #::: from(nextPos, explored + block)
       }
     }
   }
@@ -79,7 +83,7 @@ trait Solver extends GameDef {
   /**
    * The stream of all paths that begin at the starting block.
    */
-  lazy val pathsFromStart: Stream[(Block, List[Move])] = from(Stream((startBlock, Nil)), Set(startBlock))
+  lazy val pathsFromStart: Stream[(Block, List[Move])] = from(Stream((startBlock, Nil)), Set.empty)
 
   /**
    * Returns a stream of all possible pairs of the goal block along
